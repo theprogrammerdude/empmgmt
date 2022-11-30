@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "empmgmtapp": {
+      "hosting": {
+        "empmanagement": [
+          "empmgmtapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "empmgmtapp"
+  }
+}

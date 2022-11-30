@@ -1,0 +1,46 @@
+<div class="flex flex-col items-center justify-center h-screen">
+  <div class="md:w-fit w-11/12 overflow-x-auto relative shadow-md rounded-lg">
+    <table class="text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="py-3 px-6">Name</th>
+          <th scope="col" class="py-3 px-6">Father's Name</th>
+          <th scope="col" class="py-3 px-6">Salary</th>
+          <th scope="col" class="py-3 px-6">Date of Birth</th>
+          <th scope="col" class="py-3 px-6">Date of Joining</th>
+          <th scope="col" class="py-3 px-6">
+            <span class="sr-only">Edit</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 hover:cursor-pointer"
+          *ngFor="let employee of employees"
+          [routerLink]="['../employee', employee.id]"
+          routerLinkActive="router-link-active"
+        >
+          <th
+            scope="row"
+            class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ employee.name }}
+          </th>
+          <td class="py-4 px-6">{{ employee.fathers_name }}</td>
+          <td class="py-4 px-6">&#8377; {{ employee.salary | number }}</td>
+          <td class="py-4 px-6">{{ employee.dob }}</td>
+          <td class="py-4 px-6">{{ employee.doj }}</td>
+          <td class="py-4 px-6 text-right">
+            <a
+              href="#"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >Edit</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
